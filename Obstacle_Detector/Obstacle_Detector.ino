@@ -94,12 +94,12 @@ void loop()
 {
                                   // this whole part will calculate the distance and triggers message
   long duration, distance;
-  digitalWrite(TRIGGER_PIN, LOW);  
+  digitalWrite(TRIGGER_PIN, HIGH);  
   delayMicroseconds(2); 
-  digitalWrite(TRIGGER_PIN, HIGH);
-  delayMicroseconds(10); 
   digitalWrite(TRIGGER_PIN, LOW);
-  duration = pulseIn(ECHO_PIN, HIGH);
+  delayMicroseconds(10); 
+  digitalWrite(TRIGGER_PIN, HIGH);
+  duration = pulseIn(ECHO_PIN, LOW);
   distance = (duration/2) / 29.1;
   Serial.print(distance);
   Serial.println(" cm");
