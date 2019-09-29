@@ -18,13 +18,13 @@ char *p;
 char *content_length_here; 
 char *json_start; int compi;
 
-String makerKey = "bTybN0oWUtQWIi4RYu06fouxVNelwLwM7brXXi8X6q";
-String makerEventName = "blind_guy";
+String makerKey = "bTybN0oWUtQWIi4RYu06fouxVNelwLwM7brXXi8X6q"; // Add your IFTTT key here
+String makerEventName = "blind_guy"; // Add your event's name
 bool isConnected = false;
 
-char* ssid = "HackSRM-2019";
-char* pwd = "TFest#2019";
-String sms = "00919581570571";
+char* ssid = "HackSRM-2019"; // Add wifi id
+char* pwd = "TFest#2019"; // Add wifi password
+String sms = "00919581570571"; // Enter the no. on which you want this software to send message
 char* smsMessage = "Beware there is an obstacle ahead.";
 
 const int wifiConnectTimeout = 40;
@@ -47,7 +47,7 @@ void setup()
 }
 
 
-bool ConnectToNetwork(char* ssidName, char* Password)
+bool ConnectToNetwork(char* ssidName, char* Password) // This part will try to connect the wifi
 {	
 	isConnected = false;
 	
@@ -92,7 +92,7 @@ bool ConnectToNetwork(char* ssidName, char* Password)
 
 void loop()
 {
-  
+                                  // this whole part will calculate the distance and triggers message
   long duration, distance;
   digitalWrite(TRIGGER_PIN, LOW);  
   delayMicroseconds(2); 
